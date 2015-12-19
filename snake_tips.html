@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>贪吃蛇Tips</title>
+<style>
+*{margin:0;padding:0;}
+body {background:#567b59;}
+#tips{width:800px;margin:50px auto;color:#0a0489;font-size:14px;}
+table tr td {height:30px;padding:5px;}
+table{border:1px solid #0a0489;padding:10px;}
+p{font-size:14px;}
+#stitle{margin:30px;}
+#stitle a{text-decoration:none;font-size:18px;color:#000;}
+#stext{margin:25px;color:#222;}
+#stext a{text-decoration:none;color:#111;font-weight:bold;font-size:16px;font-family:Arial, Helvetica, sans-serif;}
+</style>
+<script>
+window.onload = function(){
+	document.oncontextmenu=function(){return false;}
+	document.onselectstart=function(){return false;}
+	}
+</script>
+</head>
+
+<body>
+<div id="tips">
+	<p id="stitle"><a href="snake.html" title="点击返回游戏">贪吃蛇游戏 设计思路</a></p>
+	<table>
+    	<tbody>
+        	<tr>
+            	<td></td>
+                <td>第一步：网格创建initGrid()</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td>/</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            	<td><开始>btnStart</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td>\</td>
+                <td>1.创建蛇initSnake() :  ①创建随机点randomPointer()  ②出现蛇</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td>第二步：游戏开始start()</td>
+                <td>2.添加食物addObject("food")</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td></td>
+                <td>3.蛇的走法step()  :    ①边界  ②加速点  ③减速点  ④阻挡物  ⑤食物</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td></td>
+                <td>4.添加加速和减速块addRandomBrake()</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="stext">
+    	<p>说明：</p>
+		<p>1.游戏使用原生JS编写，借鉴少量公开已久的算法；</p>
+        <p>2.游戏用到少量CSS3新增属性，例如：border-radius，box-shadow，text-shadow等属性。</p>
+        <p>3.By <a href="http://www.weibo.com/watership" title="我的新浪微博">Watership</a></p>
+    </div>
+</div>
+</body>
+</html>

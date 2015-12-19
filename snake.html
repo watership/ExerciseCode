@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>贪吃蛇游戏</title>
+<link href="snake.css" rel="stylesheet"/>
+<script src="snake.js"></script>
+</head>
+<body>
+	<div id="wrap">
+        <div id="say">贪吃蛇游戏</div> 
+        <p id="tips"><a href="snake_tips.html" target="_new" title="查看说明" >设计思路</a></p>
+        <div id="snakeWrap"></div>
+        <div id="help">
+            <span class="box food"></span><span>食物</span>
+            <span class="box skate"></span><span>加速</span>
+            <span class="box brake"></span><span>减速</span>
+            <span class="box block"></span><span>陷阱</span>
+            <span id="iscore">最高分：
+                <strong id="score">0</strong>
+            </span>
+        </div>   
+        <input type="button" id="btnStart" value="开始游戏" />
+    </div>
+</body>
+</html>
