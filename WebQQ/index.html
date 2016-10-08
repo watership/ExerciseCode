@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>QQ Desktop—by周涛</title>
+<link href="img/favicon.ico" rel="shortcut icon" />
+<style type="text/css">
+	#loadingDiv{width:100%;height:100%;background:#55a0db;font-size:30px;color:#fff;font-family:"Arial";z-index:100000;position:absolute;text-align:center;line-height:350px;text-shadow:0px 0px 5px #000,2px 2px 15px #000;}
+	#qqcalendar{position:absolute;top:10px;right:50px;z-index:3;width:180px;height:480px;overflow:hidden;}
+	#audioPlay_container{position:absolute;top:30px;left:820px;z-index:3;}
+	#qqClock{z-index:3;}
+</style>
+<link rel="stylesheet" type="text/css" href="webqq.css"/>
+<link rel="stylesheet" type="text/css" href="package/audioPlay/audioPlay.css" />
+<!-- loading -->
+<script>
+	document.write('<div id="loadingDiv">Loading'+' <span id="loading"></span></div>');
+	var loading = document.getElementById('loading');//兼容火狐
+	var s1=setInterval("loading.innerHTML+='&middot;'",200);
+	var s2=setInterval("loading.innerHTML=''",2000);
+</script>
+<!-- main -->
+<script src="ws.js"></script>
+<script src="webqq.js"></script>
+<!-- clock -->
+<script type="text/javascript" src="package/clock/Bone.js" ></script>
+<script type="text/javascript" src="package/clock/Skeleton.js" ></script>
+<!-- audioPlay -->
+<script type="text/javascript" src="package/audioPlay/audioPlay.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript">
+			var sk = new Skeleton();
+			sk.setX(1180).setY(180).setWidth(115).setHeight(115).setSkin('package/clock/clock.png');
+
+			var b = new Bone();
+			b.setName('pan');
+			b.setX(0).setY(0).setWidth(115).setHeight(115).setFootX(55).setFootY(55);
+			sk.addBone(b);
+
+			b = new Bone();
+			b.setName('hour');
+			b.setParent('pan').setWidth(12).setHeight(29).setHeadX(6).setHeadY(0).setFootX(6).setFootY(29).setSkin('package/clock/hour.png');
+			sk.addBone(b);
+
+			b = new Bone();
+			b.setName('minute');
+			b.setParent('pan').setWidth(12).setHeight(47).setHeadX(6).setHeadY(2).setFootX(6).setFootY(47).setSkin('package/clock/minute.png');
+			sk.addBone(b);
+
+			b = new Bone();
+			b.setName('second');
+			b.setParent('pan').setWidth(12).setHeight(42).setHeadX(6).setHeadY(0).setFootX(6).setFootY(42).setSkin('package/clock/second.png');
+			sk.addBone(b);
+
+			b = new Bone();
+			b.setName('ct');
+			b.setParent('pan').setWidth(115).setHeight(115).setHeadX(55).setHeadY(55).setSkin('package/clock/clock_mask.png');
+			sk.addBone(b);
+
+
+			sk.build();
+
+			var dt = new Date();
+			var sc = dt.getSeconds();
+			var mi = dt.getMinutes();
+			sk.rotate('hour',(dt.getHours()+mi/60-6)*30);
+			sk.rotate('minute',(mi-30)*6);
+			sk.rotate('second',(sc-30)*6);
+
+			window.setInterval(function(){
+				sk.rotate('second',6);
+				sc++;
+				if(sc>=60){
+					sk.rotate('minute',6);
+					sc = 0;
+					sk.rotate('hour',30/60);
+				}
+			},1000);
+</script>
+
+	<div id="qbox">
+		<img src="img/qq_bg6.jpg" id="qbg" >
+		<ul id="qqtextmenu">
+			<li><a href="###" title="关于作者和作品">关  于</a></li>
+			<li><a href="###">给我联系</a></li>
+			<li><a href="aboutQQ.html" target="_new">开发文档</a></li>
+			<li><a href="http://weibo.com/watership" title="新浪微博" target="_new">follow me</a></li>
+		</ul>
+		<div id="qbar">
+			<div id="ItemList">
+				<div title="应用市场">
+					<img src="img/appmarket.png">
+				</div>
+				<div title="QQ">
+					<img src="img/app_qq.png">
+				</div>
+				<div title="QQ空间">
+					<img src="img/app_qzone.png">
+				</div>
+				<div title="QQ邮箱">
+					<img src="img/app_mail.png">
+				</div>
+				<div title="腾讯微博">
+					<img src="img/app_weibo.png">
+				</div>
+			</div>
+			<div id="ToolList">
+				<div class="tool_item">
+					<a href="javascript:(function(q){q?q.toggle():function(d,j){j=d.createElement('script');j.async=true;j.src='//ime.qq.com/fcgi-bin/getjs';j.setAttribute('ime-cfg','lt=2');d=d.getElementsByTagName('head')[0];d.insertBefore(j,d.firstChild)}(document)})(window.QQWebIME)" class="pinyin" title="QQ云输入法"></a>
+					<a href="###" class="sound" id="id_sound" title="静音"></a>
+				</div>
+				<div class="tool_item" >
+					<a href="###" class="qqset" title="系统设置"></a>
+					<a href="###" class="qqtheme" title="主题设置"></a>
+				</div>
+				<div class="tool_item2">
+					<a href="###" class="qqstart" title="关于作品 关于作者"></a>
+				</div>
+			</div>
+		</div>      
+		<div id="qqmin" title="QQ">
+			<a href="###" id="qqmin_bg">
+				<img src="img/qmid.png">
+			</a>
+		</div>
+		<div id="qqtip" title="小小提示">
+			<a href="###" id="qqtip_bg">
+				小小提示
+			</a>
+		</div>
+		<div id="desktop_wrap">
+			<div id="desktop">
+				<div class="qqapp" title="QQ浏览器（一定要双击）">
+						<img src="img/app_browser.png">
+						<p>QQ浏览器</p>
+				</div>
+				<div class="qqapp" title="QQ词典（一定要双击）">
+					<img src="img/app_dict.png">
+					<p>QQ词典</p>
+				</div>
+				<div class="qqapp" title="便签（一定要双击）">
+					<img src="img/app_note.png">
+					<p >便签</p>
+				</div>
+				<div class="qqapp" title="应用市场（一定要双击）">
+					<img src="img/appmarket.png">
+					<p>应用市场</p>
+				</div>
+				<div class="qqapp" title="QQ游戏（一定要双击）">
+					<img src="img/app_game.png">
+					<p>QQ游戏</p>
+				</div>
+				<div class="qqapp" title="时间（一定要双击）" id="qqTime">
+					<img src="img/app_time.png">
+					<p>时间</p>
+				</div>
+				<div class="qqapp" title="QQ音乐（一定要双击）">
+					<img src="img/app_music.png">
+					<p>QQ音乐</p>
+				</div>
+				<div class="qqapp" title="新闻（一定要双击）">
+					<img src="img/app_news.png">
+					<p>新闻</p>
+				</div>
+			</div>
+			<div id="window_box">
+				<div id="qqset">
+					<div id="set_bar">
+						<p>系统设置<a id="qqset_close"href="###" title="点击关闭"></a></p>
+					</div>
+					<div id="set_con">
+						<ul>
+								<li>
+									<img src="img/settingbutton_themeicon.png" alt="主题设置" >
+									<p>主题设置</p>
+								</li>
+								<li>
+									<img src="img/settingbutton_marketicon.png" alt="应用市场" >
+									<p>应用市场</p>
+								</li>
+								<li>
+									<img src="img/settingbutton_notifysettingicon.png" alt="QQ提醒" >
+									<p>QQ提醒</p>
+								</li>
+								<li>
+									<img src="img/settingbutton_notificationsicon.png" alt="通知设置" >
+									<p>通知设置</p>
+								</li>
+								<li>
+									<img src="img/settingbutton_restoreicon.png" alt="系统还原" >
+									<p>系统还原</p>
+								</li>
+						</ul>
+					</div>
+				</div>
+				<div id="qqtheme">
+					<div id="theme_bar">
+						<p>主题设置<a id="qqtheme_close" href="###" title="点击关闭"></a></p>
+					</div>
+					<div id="theme_con">
+						<ul>
+								<li>
+									<img src="img/qq_mini_bg1.jpg" alt="郊外老宅" title="郊外老宅"  qbgSrc="img/qq_bg1.jpg" >
+									<p>郊外老宅</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg2.jpg" alt="花与叶" title="花与叶" qbgSrc="img/qq_bg2.jpg">
+									<p>花与叶</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg3.jpg" alt="小兔狗" title="小兔狗" qbgSrc="img/qq_bg3.jpg">
+									<p>小兔狗</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg4.jpg" alt="都市傍晚" title="都市傍晚" qbgSrc="img/qq_bg4.jpg">
+									<p>都市傍晚</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg5.jpg" alt="海风扬帆" title="海风扬帆" qbgSrc="img/qq_bg5.jpg">
+									<p>海风扬帆</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg6.jpg" alt="飞鹰" title="飞鹰" qbgSrc="img/qq_bg6.jpg">
+									<p>飞鹰</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg7.jpg" alt="黄金麦穗" title="黄金麦穗" qbgSrc="img/qq_bg7.jpg">
+									<p>黄金麦穗</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg8.jpg" alt="彩虹" title="彩虹" qbgSrc="img/qq_bg8.jpg">
+									<p>彩虹</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg9.jpg" alt="童话" title="童话" qbgSrc="img/qq_bg9.jpg">
+									<p>童话</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg10.jpg" alt="老器" title="老器" qbgSrc="img/qq_bg10.jpg">
+									<p>老器</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg11.jpg" alt="色墨" title="色墨" qbgSrc="img/qq_bg11.jpg">
+									<p>色墨</p>
+								</li>
+								<li>
+									<img src="img/qq_mini_bg12.jpg" alt="雨水" title="雨水" qbgSrc="img/qq_bg12.jpg">
+									<p>雨水</p>
+								</li>
+						</ul>
+					</div>
+				</div>
+				<div id="audioPlay_wrap">
+							<div id="play_close">QQ音乐播放器</div>
+							<div id="audioPlay_container">
+									<div id="audioPlay_title"></div>
+									<div id="audioPlay_time"></div>
+									<input id="audioPlay_range" type="range" min="0" max="1" step="any" value="0" />
+									<a id="audioPlay_play" class="audioPlay_button" href="###"></a>
+									音量:<input id="audioPlay_volume" type="range" min="0" max="1" step="any" value="0.5" />
+							</div>
+				</div>		
+				<div id="aboutMask"></div>
+				<div id="aboutme">
+						<span id="about_close"></span>
+						<p class="about_title">关于作品</p>
+						<p>这是借鉴腾讯WebQQ（http://web.qq.com/）开发的一个Web Desktop。</p>
+						<p>使用原生JavaScript进行开发（自己已将常用的JS函数方法封装，名为“ws”。），其中采用了HTML5的一些新功能，Chrome拥有更好的支持。</p>
+						<p>该作品在WebQQ的交互上重新进行了很多思考，实现了一些相应的功能，其在细节上进行了相关的考究。</p>
+						<p id="about_more"><a href="aboutQQ.html" target="_new" title="请猛击鼠标">欲知更多该开发文档和信息，请点击。</a></p>
+
+						<p class="about_title">关于作者</p>
+						<p>姓名：周涛,1990年出生。</p>
+						<p>手机：18811108466 (北京)</p>
+						<p>邮箱：watership@vip.qq.com  QQ：448943353</p>
+						<p class="about_title2">技术概况：</p>
+						<p>1.熟练使用XHTML、CSS和JavaScript，熟悉W3C标准和IE6；</p>
+						<p>2.熟练使用常见的调试工具：Firebug，Web Developer Tools，HttpWatch，Yslow等</p>
+						<p>3.熟悉常用软件PhotoShop，Dreamweaver等；使用过Linux；</p>
+						<p>4.对HTML5和CSS3有一定了解和认识，并非常热衷；</p>
+						<p>5.会使用jQuery等，了解常见的库和框架；</p>
+						<p>6.对新技术有着较强的求知欲和学习能力。</p>			
+				</div>
+				<div id="qqmin_space">
+						<span id="qqmin_close"></span>
+						<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=448943353&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:448943353:48" alt="点击这里给我发QQ消息" title="点击这里给我发QQ消息"></a>
+						<p class="about_title2">作者联系方式：</p>
+						<p><span>姓名：</span>周涛</p>
+						<p><span>手机：</span>18811108466</p>
+						<p><span>Q  Q：</span>448943353（点击Q我吧↑）</p>
+						<p><span>Email：</span>silentzhou@gmail.com</p>
+						<p class="qqmin_email">watership@vip.qq.com</p>
+						<p><span>网站：</span>www.saternet.org</p>
+				</div>
+			</div>
+			<div id="qqapp_open">
+					<div class="qqapp_bar">
+							<p>小小提示
+								<a class="qqapp_close" href="###" title="关闭"></a>
+								<a class="qqapp_maximize" href="###" title="最大化"></a>
+								<a class="qqapp_minimize" href="###" title="最小化"></a>
+							</p>
+					</div>
+					<div class="qqapp_con">
+						
+					</div>
+					<div id="window_resize_t"></div>
+					<div id="window_resize_r"></div>
+					<div id="window_resize_b"></div>
+					<div id="window_resize_l"></div>
+					<div id="window_resize_rt"></div>
+					<div id="window_resize_rb"></div>
+					<div id="window_resize_lb"></div>
+					<div id="window_resize_lt"></div>
+			</div>
+		</div>
+      </div>
+</body>
+</html>
+

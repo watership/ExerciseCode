@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 
+		已知n个人（以编号1，2，3...n分别表示）围坐在一张圆桌周围。
+		从编号为k的人开始报数，数到m的那个人出列；
+		他的下一个人又从1开始报数，数到m的那个人又出列；
+		依此规律重复下去，直到圆桌周围的人全部出列，求他们的出列顺序。
+	 -->
+</body>
+</html>
+<script>
+	var n = 50;
+	var m = 120;
+	var k = 0;
+	var list = [];
+	var order = [];
+	for(var i=1;i<n;i++){
+		list.push(i);
+	}
+	while(list.length>1){
+		k = (k+m-1)%list.length;
+		order.push(k);
+		list.splice(k,1);
+	}
+	console.log(order);
+
+
+	
+</script>

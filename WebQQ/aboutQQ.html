@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>关于QQ Desktop</title>
+	<style type="text/css">
+	*{padding:0;margin:0;}
+body{background:#d1dfe9;font-size:14px;padding:25px;padding-left:65px;font-family:"Arial";}
+.title{font-size:16px;margin-top:18px;font-weight:bold;}
+.title2{margin-top:5px;font-weight:bold;}
+p{line-height: 28px;}
+p a{font-weight:bold;}
+.abold{font-family:"微软雅黑";}
+p span{font-weight:bold;font-family:"微软雅黑";}
+	</style>
+</head>
+<body>
+
+<p><a href="index.html">QQ Desktop</a>此是作者一人耗时两个星期完成，借鉴腾讯WebQQ（http://web.qq.com/）开发的一个Web Desktop,和业内一些常用公开的方法和函数。</p>
+<p>使用原生JavaScript进行开发，自己将常用的JS函数方法封装，名为“ws”。</p>
+<p>其中采用了HTML5的一些新功能，在Chrome浏览器下拥有更好的支持，IE9以上和火狐12以上也支持。</p>
+<p>该作品在WebQQ的交互上重新进行了很多思考，实现了一些相应的功能。</p>
+
+<p>_______________________________________________</p>
+<p class="title">主要实现的功能和效果：</p>
+<p><span>1.页面加载的Loading：</span>
+    <p>（1）页面开始加载时使用“document.write”在页面添加一个遮罩，把z-index设为页面上最大的数，当“window.onload”执行时删除这个遮罩；</p>
+    <p>（2）Loading后的动态“……”是使用两个定时器同时执行，一个定时添加“…”，另一个定时删掉它。</p>
+</p>
+<p><span>2.设置网站的图标：</span>网页标题栏上设置了ico图标（‘ <link rel="shortcut icon" href="[ICO 文件 URL]" />’）</p>
+<p><span>3.刷新页面或者关闭窗口的窗口提示：</span>使用“window.onbeforeunload”即可。</p>
+<p><span>4.屏蔽文本选择：</span>“document.onselectstart=function(){return false;}”</p>
+<p><span>5.背景图跟随浏览器窗口大小自由伸缩大小：</span>使用img设置z-index为“-1”，然后给html和body都设置“overflow：hidden”（都设置为兼容处理）</p>
+<p><span>6.左侧固定APP的的大小根据鼠标的坐标改变大小：</span>这个是效仿苹果MacOSX系统的菜单效果；</p>
+<p><span>7.Desktop APP：</span>
+    <p>（1）APP自动竖排布局：根据可视区的高度，计算出每一个APP的top和left值，然后设置；</p>
+    <p>（2）APP互换位置（缓冲运动效果）：判断距离最近APP，然后让两者的top和left值互相更换；</p>
+    <p>（3）窗口改变大小的时APP重新排列位置：当window.onresize事件触发时，立即重新排列APP</p>
+</p>
+<p><span>8.QQ拼音:</span>这个是可以用的，调用了腾讯提供的接口</p>
+<p><span>9.声音按钮:</span>这个主要配合音乐播放器的声音控制</p>
+<p><span>10.设置弹出框:</span>
+    <p>（1）自由拖拽（限制在可视区范围）：将自由拖拽封装成函数，在这里调用；</p>
+    <p>（2）层级设置：当鼠标移入设置框时，让其层级增加，值得保持在屏幕最前面；</p>
+    <p>（3）移入移出的运动效果：使用已经封装好的运动框架，让其在打开、关闭时做缓冲运动；</p></p>
+    <p>（4）弹出框的四周均使用了CSS3中的“border-radius”，这样来设置圆角。</p>
+<p><span>11.主题设置:</span>
+    <p>（1）预先将大图路径放在自定义属性里面，当点击小缩略图时更换该桌面背景图片的“src”，使之等于预先设置的属性；</p>
+    <p>（2）使用运动框架，让更换背景图有淡入淡出的效果</p></p>
+<p><span>12.APP的弹出层：</span>
+    <p>（1）具有最小化，最大化，还原窗口功能：最小化使用多个运动让效果达到逼真的最小化动画效果；</p>
+    <p>（2）根据点击不同的APP，改变弹出层内容：使用innerHTML。</p>
+</p>
+<p><span>13.音乐播放器:</span>
+    <p>（1）这个是一个很简单的HTML5制作的播放器,取自http://www.alloyteam.com团队的一篇文章的思路进行，代码量很少的原生HTML5播放器；</p>
+    <p>（2）播放时上的音量可以配合系统设置里面的音量按钮；</p>
+</p>
+<p><span>14.时钟：</span>这是一个开源的项目，引进后修改了一些，加上了自由拖拽的效果</p>
+<p><span>15.关于作品：</span>
+    <p>（1）这是一个简单的弹出层和遮罩层，让弹出层的“z-index”大于遮罩层，两者的层级都要大于页面所有元素的“z-index”值。</p>
+    <p>（2）弹出层里面“欲知更多该开发文档和信息，请点击。”————这里使用了CSS3的动画功能（“transition:all .3s linear;”）</p>
+</p>
+<p><span>16.右下角任务栏：</span>点击弹出我的联系方式，使用链式运动</p>
+<p>17.右键菜单的重新设置：让“document.oncontextmenu”的return返回“false” ，重新设置右键菜单，让其“top”和“left”跟随鼠标的坐标</p>
+<p>________________________</p>
+<p>——更多细节处理不再详述——</p>
+<p>________________________</p>
+<p class="title">细节上的思考：</p>
+<p class="title2">一，Desktop app上的名称文字</p>
+<p>app上的名称文字肯定是使用白色（#FFF）的比较好，这一点在很多手机UI上也是这样的。但是当更换的背景图片颜色比较浅的时候，会导致文字看不清楚，于是我们可以这样设置：</p>
+<p class="abold">｛text-shadow:0px 0px 5px #000,2px 2px 35px #000;｝</p>
+<p>用CSS3的text-shadow属性给文字设置两层阴影，让文字周围有一圈黑色的背景，这样在浅背景的情况下会有所改善。</p>
+
+<p class="title2">二，设置主题背景的渐变</p>
+<p>主题的设置一开始写出来的时候，只是很生硬的瞬间换了背景的图片。后来想到了Windows7更换壁纸是渐变的效果，所以准备按照这个来做。</p>
+<p>仔细观察Windows7更换壁纸的时候是这样的：原先的背景图透明度逐渐下降，再次同时要更换的壁纸逐渐显示出来，这是同时进行的。</p>
+<p>由于布局结构问题，在这里只能同时进行一个，于是我让原先的背景图opacity用缓冲运动框架降到0.p2，然后立即替换背景图并设置opacity为0.2，再让更换后的图背景缓冲到1。</p>
+<p>（由于网速问题，该效果看起来不是很明显，但是在本地看效果很好~）</p>
+
+<p class="title2">三，关于Loading</p>
+<p>原先是没有Loading这个过程，在写收工后，我放在网上发现打开速度奇慢无比（可能是空间服务商在美国导致的），于是就加上了Loading的效果。</p>
+<p>这个Loading效果相当的简单，耗费很少的资源。</p>
+______________________________</p>
+<p>——还有许多小细节上的考虑就不再详述——</p>
+<p>____________________________________</p>
+<p class="title">作者联系方式：</p>
+<p>Phone：18811108466</p>
+<p>E-mail：watership@vip.qq.com</p>
+<p>QQ：448943353</p>
+<p>weibo：<a href="http://weibo.com/watership">http://weibo.com/watership</a></p>
+<p>Site:<a href="www.saternet.org">www.saternet.org</a></p>
+<p></p>
+<p>_____________________</p>
+<p>—————————————————————</p>
+<p>文档更新日期2012.11.5</p>
+</body>
+</html>

@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+	*{padding:0;margin:0px;}
+	a{text-decoration:none;}
+	li{list-style: none;}
+	body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden; }
+	body{background:#55a0db;}
+	#qbox{height:100%;width:100%;}
+	#qbg{height:100%;width:100%;display:block; z-index:-1;overflow:hidden;}
+	
+	#qqtextmenu{width:130px;height:170px;border:2px solid #b8cbcb; z-index:50005;background:#fff;position:absolute;display:none;-webkit-box-shadow:1px 1px 2px #90a9a9;-moz-box-shadow:1px 1px 2px #90a9a9;padding:3px;}
+	#qqtextmenu li {font-size:14px;font-weight:bold;margin:5px 0;line-height:30px;text-align:center;}
+	#qqtextmenu li a{color:#000;letter-spacing: 2px;display:block;text-align:center;}
+	#qqtextmenu li a:hover{background:#4f9ad1;color:#fff;}
+
+	#qbar{width:73px;height:576px;background:url(img/dock_l.png) no-repeat;position:absolute;left:0;top:30px;}
+	#qqmin{position:absolute;right:0;bottom:0;cursor:pointer;}
+	#qqmin_bg{background:url(img/bg_task_nor.png) no-repeat;width:112px;height:64px;display:block;}
+	#qqmin img{position:absolute;display:block;bottom:10px;right:72px;border:none;}
+	#qqmin a:hover{background:url(img/bg_task_over.png) no-repeat;}
+
+	#qqtip{position:absolute;right:112px;bottom:0px;cursor:pointer;padding-left:15px;display:none;}
+	#qqtip a{font-size:12px;color:#fff;line-height:72px;background:url(img/bg_task_nor.png) no-repeat;width:112px;height:64px;display:block;text-align:center;}
+	#qqtip a:hover{background:url(img/bg_task_over.png) no-repeat;}
+	
+	#ToolList{position:absolute;bottom:3px;padding:5px 6px;} 
+	#ToolList a{background:url(img/portal_all_png.png) no-repeat;display:block;width:20px;height:20px;margin:5px 3px;float:left;}
+	#ToolList .tool_item2 .qqstart{width:40px;height:40px;margin:5px 6px;}
+	#ToolList .tool_item .pinyin{background-position:-80px 0;}
+	#ToolList .tool_item .sound{background-position:0 0;}
+	#ToolList .tool_item .qqset{background-position:-60px 0;}
+	#ToolList .tool_item .qqtheme{background-position:-40px 0;}
+	#ToolList .tool_item2 .qqstart{background-position:-100px 0;}
+	#ToolList .tool_item .pinyin:hover{background-position:-80px -20px;}
+	#ToolList .tool_item .sound:hover{background-position:0 -20px;}
+	#ToolList .tool_item .qqset:hover{background-position:-60px -20px;}
+	#ToolList .tool_item .qqtheme:hover{background-position:-40px -20px;}
+	#ToolList .tool_item2 .qqstart:hover{background-position:-140px 0;}
+	#ToolList .tool_item .a_sound{background-position:-20px 0;}
+	#ToolList .tool_item .a_sound:hover{background-position:-20px -20px;}
+	
+	#ItemList{padding:35px 3px;}
+	#ItemList img{width:48px;margin:12px 8px;border:none;}
+	#ItemList div{cursor: pointer;}
+
+	#desktop{width:800px;height:500px;position:absolute;top:46px;left:140px;}
+	#desktop div{position:absolute;width:86px;height:82px;padding-top:6px;}
+	#desktop img{width:48px;height:48px;display:block;margin:5px auto;}
+	#desktop .qqactive{background:url(img/app_mouseover.png) no-repeat;}
+	#desktop div p{font-size:12px;color:#fff;text-align:center;width:100%;text-shadow:0px 0px 5px #000,2px 2px 35px #000;}
+
+	#qqset{position:absolute;top:-620px;left:160px;z-index:3;display:none;}
+	#set_bar{background:url(img/sprite_repeat_x_png.png) repeat-x;width:580px;height:25px;border-radius:6px 6px 0px 0px;}
+	#set_bar p{font-size:12px;line-height:25px;font-weight: bold;letter-spacing: 2px;text-align: center;border:1px solid #aaa;border-radius:6px 6px 0px 0px;cursor: default;padding-right:5px;}
+	#set_bar a{display:block;width:12px;height:12px;background:url(img/sprite_main_png.png) no-repeat -68px -62px;float:right;margin:5px;}
+	#set_con{width:568px;height:435px;border:1px solid #aaa;border-top:none;position: relative;background:#fff;padding:5px;}
+	#set_con img{display:block;margin:5px auto;}
+	#set_con ul{padding:10px 0;}
+	#set_con ul li{width:70px;height:70px;cursor:pointer;float:left;margin:20px;}
+	#set_con ul li p{font-size:12px;color:#5664a7;text-align:center;width:100%;}
+
+	#qqtheme{position:absolute;top:-620px;left:200px;z-index:3;display:none;}
+	#theme_bar{background:url(img/sprite_repeat_x_png.png) repeat-x;width:580px;height:25px;border-radius:6px 6px 0px 0px;}
+	#theme_bar p{font-size:12px;line-height:25px;font-weight: bold;letter-spacing: 2px;text-align:center;border:1px solid #aaa;border-radius:6px 6px 0px 0px;cursor: default;padding-right:5px;}
+	#theme_bar a{display:block;width:12px;height:12px;background:url(img/sprite_main_png.png) no-repeat -68px -62px;float:right;margin:5px;}
+	#theme_con{width:568px;height:435px;border:1px solid #aaa;border-top:none;position: relative;background:#fff;padding:5px;overflow:auto;}
+	#theme_con img{width:140px;height:88px;display:block;margin:5px;border-radius:8px 8px 8px 8px}
+	#theme_con ul{padding-left:18px;}
+	#theme_con ul li{width:150px;height:88px;cursor:pointer;float:left;padding:5px;padding-bottom:25px;margin:8px;}
+	#theme_con ul li p{font-size:12px;color:#5664a7;text-align:center;width:100%;}
+
+	#aboutme{width:600px;height:490px;font-size:14px;font-family:"Arial";position:absolute;top:-650px;left:350px;z-index:20005;display:none;background:#d1dfe9;box-shadow: 3px 3px 15px 1px black;border-radius:8px 8px 8px 8px;padding:20px;}
+	#aboutMask{ height:100%;background:#000; opacity:0.6; filter:alpha(opacity=60); position:absolute;left:0;top:0;width:100%;z-index:20000;display:none;}
+	#aboutme p{line-height:24px;}
+	#aboutme span{position:absolute;right:-15px;top:-10px;background:url(img/close.png) no-repeat;display:block;width:35px;height:35px;cursor: pointer;}
+	#aboutme .about_title{margin-top:15px;font-weight:bold;font-family:"微软雅黑";}
+	#aboutme .about_title2{margin-top:10px;font-weight:bold;text-shadow:3px 3px 4px #999;}
+	#aboutme #about_more{padding-left:18px;}
+	#aboutme #about_more a{font-weight:bold;font-family:"微软雅黑";color:blue;-webkit-transition:all .3s linear;-moz-transition:all .3s linear;-o-transition:all .3s linear;transition:all .3s linear;}
+	#aboutme #about_more a:hover{padding-left: 10px;}
+
+	#qqmin_space{width:30px;height:30px;font-family:"Arial";position:absolute;right:5px;bottom:5px;z-index:20005;display:none;background:#d1dfe9;box-shadow: 3px 3px 15px 1px black;border-radius:8px 8px 8px 8px;padding:30px;}
+ 	#qqmin_space p{margin:5px;}
+ 	#qqmin_space .about_title2{font-size:18px;margin:10px;font-weight:bold;font-family:"微软雅黑";text-shadow:3px 3px 4px #999;}
+ 	#qqmin_space .qqmin_email{padding-left:58px;}
+ 	#qqmin_space p span{text-shadow:3px 3px 4px #999;}
+ 	#qqmin_space #qqmin_close{position:absolute;right:-15px;top:-10px;background:url(img/close.png) no-repeat;width:35px;height:35px;cursor: pointer;}
+ 	#qqmin_space a{position:absolute;right:60px;top:55px;}
+
+	#qqapp_open{width:450px;position:absolute;z-index:7;left:340px;top:120px;border-radius:7px 7px 6px 6px;display: none;overflow:hidden;}
+ 	#qqapp_open .qqapp_bar{background:url(img/sprite_repeat_x_png.png) repeat-x;height:25px;border-radius:6px 6px 0px 0px;}
+ 	#qqapp_open .qqapp_bar p{font-size:12px;line-height:25px;font-weight: bold;letter-spacing: 2px;text-align:center;border-radius:6px 6px 0px 0px;cursor: default;padding-left:55px;}
+ 	#qqapp_open .qqapp_bar p a{display:block;width:12px;height:12px;background:url(img/sprite_main_png.png) no-repeat;float:right;margin:5px;}
+ 	#qqapp_open .qqapp_bar p .qqapp_maximize{background-position:-39px -62px;}
+ 	#qqapp_open .qqapp_bar p .qqapp_minimize{background-position:-10px -62px;}
+ 	#qqapp_open .qqapp_bar p .qqapp_close{background-position:-68px -62px;}
+ 	#qqapp_open .qqapp_con{height:350px;background:#f9f9f9;padding:5px;border-radius:0px 0px 6px 6px;overflow:auto;}
+ 	#qqapp_open .qqapp_con p{font-family:"Arial";font-size:14px;line-height:32px;text-align:center;color:#134463;}
+ 	.apptxt{font-weight: bold;}
+ 	#qqapp_open #window_resize_t{position: absolute; overflow: hidden;cursor: n-resize; z-index: 1; left: 0px; top: -5px; width: 100%; height: 5px;}
+ 	#qqapp_open #window_resize_r{position: absolute; overflow: hidden;cursor: e-resize; z-index: 1; right: -5px; top: 0px; width: 5px; height: 100%;}
+ 	#qqapp_open #window_resize_b{position: absolute; overflow: hidden;cursor: s-resize; z-index: 1; left: 0px; bottom: -5px; width: 100%; height: 5px;}
+ 	#qqapp_open #window_resize_l{position: absolute; overflow: hidden;cursor: w-resize; z-index: 1; left: -5px; top: 0px; width: 5px; height: 100%; }
+ 	#qqapp_open #window_resize_rt{position: absolute; overflow: hidden;cursor: ne-resize; z-index: 2; right: -5px; top: -5px; width: 5px; height: 5px; }
+ 	#qqapp_open #window_resize_rb{position: absolute; overflow: hidden;cursor: se-resize; z-index: 2; right: -5px; bottom: -5px; width: 5px; height: 5px;}
+ 	#qqapp_open #window_resize_lb{position: absolute; overflow: hidden;cursor: sw-resize; z-index: 2; left: -5px; bottom: -5px; width: 5px; height: 5px; }
+ 	#qqapp_open #window_resize_lt{position: absolute; overflow: hidden;cursor: nw-resize; z-index: 2; left: -5px; top: -5px; width: 5px; height: 5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+#audioPlay_container{width:330px; border:2px solid #fff; font:12px/150% Simsun,Arial; background:#003d66; padding-bottom:20px;border-radius:16px;color:#bbb; font-weight: bold;padding:20px;}
+#play_close{width:330px;height:15px;border-radius:16px 16px 0 0;background:#082e48;}
+#audioPlay_title{font-family:"Arial";float:left; width:150px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+#audioPlay_time{ float:right; }
+#audioPlay_range{display:block; margin:0; padding:0; width:280px; clear:both; }
+.audioPlay_button{ border-radius:16px; font-family:"Arial";font-size:14px;display:inline-block; border:2px solid #fff; text-align:center; padding:2px; text-decoration:none; color:#bbb;font-size:12px; }
+.audioPlay_button:hover{ border-color:red; color:red;font-weight:bold;}
+#audioPlay_play{width:40px; }
+#audioPlay_volume{width:75px; vertical-align:bottom; }

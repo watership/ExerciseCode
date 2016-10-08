@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>骨骼动画实现的钟</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+<meta http-equiv="expires" content="0" />
+<style type="text/css">
+html{overflow:hidden}
+</style>
+<script type="text/javascript" src="Skeleton.js"></script>
+<script type="text/javascript" src="Bone.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+//<![CDATA[
+var sk = new Skeleton();
+sk.setX(200).setY(200).setWidth(115).setHeight(115).setSkin('clock.png');
+
+var b = new Bone();
+b.setName('pan');
+b.setX(0).setY(0).setWidth(115).setHeight(115).setFootX(55).setFootY(55);
+sk.addBone(b);
+
+b = new Bone();
+b.setName('hour');
+b.setParent('pan').setWidth(12).setHeight(29).setHeadX(6).setHeadY(0).setFootX(6).setFootY(29).setSkin('hour.png');
+sk.addBone(b);
+
+b = new Bone();
+b.setName('minute');
+b.setParent('pan').setWidth(12).setHeight(47).setHeadX(6).setHeadY(2).setFootX(6).setFootY(47).setSkin('minute.png');
+sk.addBone(b);
+
+b = new Bone();
+b.setName('second');
+b.setParent('pan').setWidth(12).setHeight(42).setHeadX(6).setHeadY(0).setFootX(6).setFootY(42).setSkin('second.png');
+sk.addBone(b);
+
+b = new Bone();
+b.setName('ct');
+b.setParent('pan').setWidth(115).setHeight(115).setHeadX(55).setHeadY(55).setSkin('clock_mask.png');
+sk.addBone(b);
+
+
+sk.build();
+
+var dt = new Date();
+var sc = dt.getSeconds();
+var mi = dt.getMinutes();
+sk.rotate('hour',(dt.getHours()+mi/60-6)*30);
+sk.rotate('minute',(mi-30)*6);
+sk.rotate('second',(sc-30)*6);
+
+window.setInterval(function(){
+	sk.rotate('second',6);
+	sc++;
+	if(sc>=60){
+		sk.rotate('minute',6);
+		sc = 0;
+		sk.rotate('hour',30/60);
+	}
+},1000);
+//]]>
+</script>
+</body>
+</html>

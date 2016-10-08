@@ -2,6 +2,6 @@
 This is my code of study front-end .
 
 ## list: 
-* snake :2012.11
-* mindmap:2013.12
-* 
+* Snake : 2012.11
+* WebQQ : 2012.11
+* MindMap : 2013.12
