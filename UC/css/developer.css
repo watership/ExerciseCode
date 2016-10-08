@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*初始化*/
+body,h1,h2,h3,ul,p{margin:0;padding:0;}
+li{ list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+body{min-width:950px;}
+.clear{zoom:1;}   
+.clear:after{content:"";display:block;clear:both;}
+/*导航栏*/
+h1{background:url(../imgs/logo_uc.png) no-repeat;height:32px;line-height:300px;overflow:hidden;width:950px;margin:17px auto;}
+#header_box{width:950px;margin:0 auto;height:33px;}
+#header_bg{height:33px;border-top:1px solid #dbdbdb;border-bottom:1px solid #ff6600;}
+#nav{line-height:33px;float:left;}
+#nav li{float:left;margin-right:57px;}
+#nav li a{color:#2d2b2b;font-family:"宋体";font-weight:bold;font-size:14px;float:left;}
+#nav li a:hover,#nav .active{color:#ff6600;background:url(../imgs/nav_bg.png) no-repeat center bottom;line-height:33px;}
+
+#followMe{height:22px;float:right;}
+#followMe li{float:left;margin:7px 0px;}
+#followMe li a{width:22px;height:22px;background:url(../imgs/follow.gif) no-repeat;padding-left:6px;line-height:300px;overflow:hidden;float:left;}
+#followMe #r1{background-position:0 0;}
+#followMe #r2{background-position:0 -31px;}
+#followMe #r3{background-position:0 -62px;}
+#followMe #r4{background-position:0 -94px;}
+#followMe #r5{background-position:0 -125px;}   
+
+#wrap{width:950px;margin:0 auto;} 
+#wrap #developer_menu{height:50px;}
+#wrap #developer_menu li{float:right;margin-left:19px;} 
+#wrap #developer_menu li a{font-size:12px;color:#666;line-height:50px;}
+#wrap #developer_menu li a:hover,#wrap ul .active{color:#ff6600;}
+#developer_pic{width:950px;height:350px;background:url(../imgs/kaifa.png) no-repeat;}
+
+#wrap #developer_box{height:386px;overflow:hidden;margin-top:15px;border-bottom:1px solid #d3d3d3;}
+#wrap #developer_box li{width:250px;height:386px;float:left;}
+#wrap #developer_box #box1{border:1px solid #d3d3d3;}
+#wrap #developer_box #box2{border-top:1px solid #d3d3d3;border-bottom:1px solid #d3d3d3;}
+#wrap #developer_box #box3{border:1px solid #d3d3d3;}
+
+#wrap #developer_box li{padding:22px 35px 0 30px;}
+#wrap #developer_box #box1 .box_title{background:url(../imgs/box1.png) no-repeat;font-size:18px;color:#00002a;padding-left:60px;line-height:49px;font-family:"微软雅黑"}
+#wrap #developer_box #box1 .p1{font-size:12px;color:#000;line-height:24px;margin-top:10px;font-weight:bold;}
+#wrap #developer_box .p2{font-size:12px;color:#666;line-height:24px;}
+#wrap #developer_box .box_btn a{background:url(../imgs/box1_btn.png) no-repeat;width:116px;height:36px;display:block;margin-top:15px;}
+
+#wrap #developer_box #box2 .box_title{background:url(../imgs/box2.png) no-repeat;font-size:18px;color:#00002a;padding-left:60px;line-height:49px;font-family:"微软雅黑"}
+#wrap #developer_box #box2 .title_min{font-size:12px;color:#0050b4;margin-top:10px;}
+
+#wrap #developer_box #box3 .box_title{background:url(../imgs/box3.png) no-repeat;font-size:18px;color:#00002a;padding-left:60px;line-height:49px;font-family:"微软雅黑"}
+#wrap #developer_box #box3 .p2{margin-top:10px;}
+#wrap #developer_box .p_box{margin-top:10px;}
+#wrap #developer_box .p3 a{font-size:12px;color:#0050b4;line-height:45px;}
+
+#tiaoshi{margin-top:15px;}

@@ -1,0 +1,110 @@
+@charset "utf-8";
+/*------------------------公共样式----------------------------*/
+/*初始化*/
+body,h1,h2,h3,h4,ul,p{margin:0;padding:0;}
+li{ list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+body{background:#2a2a2a;min-width:950px;}
+.clear{zoom:1;}   
+.clear:after{content:"";display:block;clear:both;}
+/*抬头样式*/
+#header{height:90px;background:url(../imgs/header_bg.png) repeat-x #292929;}
+#header_box{width:950px;margin:0 auto;}
+#header_box h2 a{font-size:12px;font-weight:normal;color:#666;display:inline;float:right;}
+#logo{height:90px;width:190px;float:left;background:url(../imgs/logo.jpg) no-repeat;}
+#logo a{ display:block;height:90px;line-height:300px;overflow:hidden;}
+#nav li{float:left;height:54px;line-height:54px;margin-top:30px;padding-left:45px;}
+#nav li a{font-size:14px;font-family:"宋体";color:#7a7a7a;display:block;height:52px;background:url(../imgs/nav_l_bg.gif) no-repeat;padding-left:21px;padding-right:5px;float:left;}
+#nav #row1{background-position:0px 19px;}
+#nav #row2{background-position:0px -51px;}
+#nav #row3{background-position:0px -123px;}
+#nav #row4{background-position:0px -194px;}
+#nav #row5{background-position:0px -262px;}
+#nav #row6{background-position:0px -332px;margin-top:-15px;}
+#nav a:hover,#nav .active{border-bottom:2px solid #ff6600;}
+#header_box h2 a:hover,#some_link a:hover{color:#ff6600;}
+/*尾部样式*/ 
+#footer{height:100px;width:950px;margin:0 auto;position:relative;}
+#some_link{width:950;height:44px;border-bottom:1px solid #353535;}
+#other_link{height:44px;position:relative;float:left;}
+#other_link a{color:#7a7a7a;font-size:14px;font-family:"宋体";line-height:44px;float:left;}
+#copyRight{color:#5e5e5e;font-size:12px;font-family:"宋体";text-align:center;line-height:22px;height:54px;padding-top:5px;}
+#some_link a{padding-left:26px;height:44px;line-height:44px;font-size:14px;color:#6b6b6b;}
+#uc_link1{background:url(../imgs/uc_link1.gif) no-repeat 0 8px;position:absolute;left:315px;}
+#uc_link2{background:url(../imgs/uc_link2.gif) no-repeat 0 9px;position:absolute;left:424px;}
+
+#followMe{float:right;padding-top:10px;height:22px;}
+#followMe li{float:left;}
+#followMe li a{width:22px;height:22px;background:url(../imgs/follow.gif) no-repeat;padding-left:6px;line-height:300px;overflow:hidden;float:left;}
+#followMe #r1{background-position:0 0;}
+#followMe #r2{background-position:0 -31px;}
+#followMe #r3{background-position:0 -62px;}
+#followMe #r4{background-position:0 -94px;}
+#followMe #r5{background-position:0 -125px;}                                    
+/*------------------------公共样式----------------------------*/
+
+/*页面主样式*
+已知问题：在IE6下有问题
+/
+
+/*按平台下载*/
+#download_bg{background:#f6f6f6;}
+#download{width:950px;margin:0 auto;padding-top:20px;}
+
+#sys_download{width:948px;height:178px;border:1px solid #dadada;background:#fff;margin:0 0 15px 0;}
+#sys_download h3{font-size:18px;color:#666;height:45px;line-height:45px;border-bottom:1px dashed #dadada;padding-left:15px;}
+
+#sys_pic{float:left;width:708px;height:103px;padding-left:10px;overflow:hidden;}/*为什么要加overflow:hidden;*/
+#sys_pic a,#sys_text a{font-size:12px;color:#7d6695;font-family:Arial;}
+#sys_pic li{float:left;}
+#sys_pic li a{display:block;width:105px;height:100px;float:left;background:url(../imgs/sys2.gif) no-repeat;text-align:center;line-height:188px;padding-left:5px;}
+#sys_pic #android_pic{background-position:-15px 5px;}
+#sys_pic #iphone_pic{background-position:-15px -295px;}
+#sys_pic #ipad_pic{background-position:-15px -595px;}
+#sys_pic #symbian_pic{background-position:-15px -890px;}
+#sys_pic #java_pic{background-position:-15px -1194px;}
+#sys_pic #wp7_pic{background-position:-15px -2390px;}
+
+/*按机型下载*/
+#sys_text{float:right;width:210px;height:100px;margin:16px 0 16px 0;border-left:1px dashed #dadada;padding-left:13px;}
+#sys_text li{float:left;width:105px;height:34px;}
+#phone_download #phone_title h3{font-size:18px;color:#666;height:45px;line-height:45px;padding-left:15px;float:left;}
+#search_box{height:25px;float:right;padding-right:15px;position:relative;}
+.search{font-size:12px;color:#999;background:url(../imgs/s_btn.gif) no-repeat;height:25px; border:none;padding-left:10px;margin-top:10px;position:absolute;right:50px}
+.search_btn{background:url(../imgs/btn_s.gif);width:36px;height:25px;border:none;position:absolute;right:15px;top:10px;}
+#phone_download{background:#fff;border:1px solid #dadada;}
+#phone_title{height:45px;}
+#phone_text{padding-left:15px;height:88px;border-top:1px dashed #dadada;}
+#phone_text h4{font-size:12px;color:#555;font-weight:normal;padding-top:5px;}/*有问题！！！*/
+#phone_text a{font-size:12px;color:#666;display:block;width:114px;float:left;padding-top:12px;font-family:Arial;}
+#phone_download #phone_btn{padding:10px 0 10px 375px;border-top:1px dashed #dadada;background:#fafafa;}
+#phone_download #phone_btn a{background:url(../imgs/btn_phone_down.gif) no-repeat;display:block;width:200px;height:45px;}
+
+/*其他下载方式*/
+#other_download{width:948px;height:328px;background:#fff;border:1px solid #dadada;margin:15px 0 15px 0;}/*下padding有问题！！！*/
+#other_title{border-bottom:1px dashed #dadada;width:920px;height:45px;margin:0 auto;}
+#other_download #other_title h3{font-size:18px;color:#666;height:45px;line-height:45px;float:left;}
+#other_download #other_title p{float:right;font-size:12px;color:#555;line-height:45px;}
+#other_download #other_title p a{color:#0050b4;}
+
+#mobile_download{width:314px;height:262px;padding-top:20px;background:url(../imgs/mobile_download.gif) no-repeat;float:left;}
+#mobile_download h4{font-size:14px;font-weight:normal;color:#555;padding-left:14px;}
+#mobile_download p{font-size:12px;color:#555;line-height:34px;padding-left:14px;}
+#mobile_download p span{color:#fe664e;font-family:Arial;}
+
+#note_download{width:314px;height:262px;float:left;border-left:solid 1px #e8e8e8;border-right:solid 1px #e8e8e8;padding:20px 15px 0;}
+#note_download h4{font-size:14px;font-weight:normal;color:#555;line-height:24px;}
+#note_download p{font-size:12px;color:#555;line-height:24px;}
+#note_download .phone_number{border:solid 1px #abadb3;width:282px;height:32px;font-size:14px;color:#abadb3;margin:15px 0 0 12px;line-height:32px;}
+#note_download .phone_code{border:solid 1px #abadb3;width:184px;height:32px;font-size:14px;color:#abadb3;margin:15px 0 0 12px;line-height:32px;float:left;}
+#note_download .code_pc{border:solid 1px #abadb3;float:left;margin:17px 0 0 5px;}/*IE下margin管用，但是Chrome下不管用！！！*/
+#note_download .send_btn{background:url(../imgs/send.png) no-repeat;width:112px;height:32px;border:none;float:left;display:inline;}/*有问题！！！*/
+#note_download .code_change{font-size:12px;}
+#note_download .code_change a{color:#0050b4;font-size:12px;}
+
+#code_download{height:262px;padding-top:15px;}
+#code_download h4{font-size:14px;font-weight:normal;color:#555;line-height:30px;padding-left:14px;}
+#code_download p{font-size:12px;color:#555;line-height:24px;padding-left:14px;}
+
+#sys_pic a:hover,#sys_text a:hover,#phone_text a:hover{color:#ff6600;}
