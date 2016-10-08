@@ -1,8 +1,8 @@
-## exercise code
+## Exercise Code
 This is my code of study front-end .
 
-## list:
-* 2012.10 : UC官网（静态）
+## List:
+* 2012.10 : UC（静态官网）
 * 2012.11 : Snake
 * 2012.11 : WebQQ
 * 2013.12 : Jeep
